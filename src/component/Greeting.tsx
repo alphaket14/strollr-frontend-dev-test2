@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 const Greeting: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const Greeting: React.FC = () => {
   );
 };
 
-const styles = {
+const styles: Record<string, CSSProperties> = {
   container: {
     display: "flex",
     alignItems: "center",
@@ -28,35 +28,29 @@ const styles = {
     padding: "20px",
     borderRadius: "10px",
     backgroundColor: "#f8f9fa",
-    gap: "20px",
-    marginBottom: "60px"
   },
   textContainer: {
     display: "flex",
     flex: 1,
-    flexDirection: "column",
-  },
-  heading: {
-    fontSize: "20px",
-    fontWeight: "bold",
-    color: "#333",
-    margin: "0",
-  },
-  paragraph: {
-    fontSize: "14px",
-    color: "#666",
-    marginTop: "5px",
+    flexDirection: "column" as const,
   },
   imageContainer: {
-    height: "100px",
-    width: "auto",
     flex: 1,
+    display: "flex",
+    justifyContent: "center",
+  },
+  heading: {
+    fontSize: "24px",
+    marginBottom: "10px",
+  },
+  paragraph: {
+    fontSize: "16px",
+    color: "#6c757d",
   },
   image: {
-    display: "block",
-    height: "200px",
-    marginTop: "-40px",
-  },
+    maxWidth: "100%",
+    height: "auto",
+  }
 };
 
 export default Greeting;
